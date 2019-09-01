@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="auther" content="UGTE">
+
+    <title>Maths</title>
+    <link rel="icon" href="images/ugte-logo-10px.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/theme.css">
+
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="page-content--bge5">
+            <div class="container">
+                <div class="Index-wrap">
+                    <div class="Index-content">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="images/ugte-logo.png" alt="Score-UGTE">
+                            </a>
+                        </div>
+                        <form name="Calcul"  class="form-horizontal">
+                            <div class="row form-group">
+                                <div class="col col-md-6">
+                                    <input type="number" id="MG" placeholder="MG" class="form-control">
+                                </div>
+                                <div class="col col-md-6">
+                                    <input type="number" id="M" placeholder="M" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-6">
+                                    <input type="number" id="SVT" placeholder="SVT" class="form-control">
+                                </div>
+                                <div class="col col-md-6">
+                                    <input type="number" id="SP" placeholder="SP" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-6">
+                                    <input type="number" id="F" placeholder="F" class="form-control">
+                                </div>
+                                <div class="col col-md-6">
+                                    <input type="number" id="Ang" placeholder="Ang" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row form-group ">
+                                <label class="form-control-label" >Score</label>
+                            </div>
+                            <div class="row has-success form-group">
+                                <div class="col col-md-6">
+                                    <input disabled type="text" id="score" placeholder="Score" class="is-valid form-control-success form-control">
+                                </div>
+                                <div class="col col-md-6">
+                                    <input disabled  type="text" id="scoreX" placeholder="Score avec 7%" class="is-valid form-control-success form-control">
+                                </div>
+                            </div>
+                        </form>
+                        <div>
+                            <button class="btnC" onclick="CalculScore()"><span>Calcul</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function CalculScore() { 
+            var resultat,score,scoreX;
+            M = Number(document.getElementById("M").value);
+            SVT = Number(document.getElementById("SVT").value);
+            SP = Number(document.getElementById("SP").value);
+            Ang = Number(document.getElementById("Ang").value);
+            F = Number(document.getElementById("F").value);
+            MG = Number(document.getElementById("MG").value);
+
+
+            resultat=(M*2)+(0.5*SVT)+(1.5*SP)+F+Ang;
+            score = resultat+(4*MG);
+            score=Math.round(score*100)/100;
+            scoreX=score*1.07;
+            document.Calcul.score.value=score;
+            document.Calcul.scoreX.value=scoreX;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
